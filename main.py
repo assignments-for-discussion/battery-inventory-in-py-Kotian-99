@@ -1,8 +1,8 @@
 def classify_battery_by_soh(present_capacity, rated_capacity=120):
     soh = (present_capacity / rated_capacity) * 100
-    if soh > 80:
+    if soh >= 80:
         return "healthy"
-    elif 62 <= soh <= 80:
+    elif 62 <= soh < 80:
         return "exchange"
     else:
         return "failed"
